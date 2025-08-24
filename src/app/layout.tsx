@@ -27,7 +27,7 @@ export default async function RootLayout({
       suppressHydrationWarning
     >
       <body
-      >
+    >
         <Providers>
           <TRPCReactProvider>
             {children}

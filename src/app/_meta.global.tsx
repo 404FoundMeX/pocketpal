@@ -59,5 +59,15 @@ export default {
         title: 'Deployment & Hosting',
       },
     }
-  }
+  },
+  about: {
+    type: 'page',
+    title: 'About',
+    href: '/about'
+  },
+  contact: {
+    type: 'page',
+    title: 'Contact',
+    href: '/contact'
+  },
 }
