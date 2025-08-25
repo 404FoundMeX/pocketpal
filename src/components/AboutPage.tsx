@@ -59,7 +59,7 @@ export default function AboutPage() {
               <div className="flex gap-4">
                 <Button 
                   as={Link}
-                  href="https://github.com/StackOverlordX/pocketpal" 
+                  href="https://github.com/404FoundMeX/pocketpal" 
                   target="_blank"
                   variant="bordered" 
                   className="border-[hsl(280,100%,70%)] text-[hsl(280,100%,70%)] hover:bg-[hsl(280,100%,70%)] hover:text-white transition-colors"
@@ -69,7 +69,8 @@ export default function AboutPage() {
                 </Button>
                 <Button 
                   as={Link}
-                  href="/contact" 
+                  href="https://discord.gg/2NssRs2b"
+                  target="_blank"
                   variant="flat"
                   className="bg-[hsl(280,100%,70%)] text-white hover:bg-[hsl(280,100%,60%)] transition-colors"
                   startContent={<Heart className="h-4 w-4" />}
@@ -198,7 +199,7 @@ export default function AboutPage() {
           <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
             <Button 
               as={Link}
-              href="https://github.com/StackOverlordX/pocketpal" 
+              href="https://github.com/404FoundMeX/pocketpal" 
               target="_blank"
               size="lg" 
               color="primary" 
@@ -209,7 +210,8 @@ export default function AboutPage() {
             </Button>
             <Button 
               as={Link}
-              href="/contact" 
+              href="https://discord.gg/2NssRs2b"
+              target="_blank"
               size="lg" 
               variant="bordered" 
               className="border-white text-white hover:bg-white/10 transition-colors"

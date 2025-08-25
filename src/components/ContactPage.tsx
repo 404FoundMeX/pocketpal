@@ -144,7 +144,7 @@ export default function ContactPage() {
                   </Card>
                 </Link>
                 
-                <Link href="https://www.linkedin.com/in/dedaku/" className="block" target="_blank">
+                <Link href="https://www.linkedin.com/in/404foundme/" className="block" target="_blank">
                 <Card className="bg-gray-800/50 backdrop-blur-sm border border-gray-700 hover:border-[hsl(280,100%,70%)] transition-colors">
                   <CardBody className="flex items-center gap-4 flex-row">
                     <div className="rounded-full bg-blue-500/20 p-3">
@@ -158,7 +158,7 @@ export default function ContactPage() {
                 </Card>
                 </Link>
 
-                <Link href="https://discord.gg/your-invite-link" className="block" target="_blank">
+                <Link href="https://discord.gg/2NssRs2b" className="block" target="_blank">
                 <Card className="bg-gray-800/50 backdrop-blur-sm border border-gray-700 hover:border-[hsl(280,100%,70%)] transition-colors">
                   <CardBody className="flex items-center gap-4 flex-row">
                     <div className="rounded-full bg-indigo-500/20 p-3">
@@ -172,7 +172,7 @@ export default function ContactPage() {
                 </Card>
                 </Link>
 
-                <Link href="https://github.com/StackOverlordX" className="block" target="_blank">
+                <Link href="https://github.com/404FoundMeX" className="block" target="_blank">
                 <Card className="bg-gray-800/50 backdrop-blur-sm border border-gray-700 hover:border-[hsl(280,100%,70%)] transition-colors ">
                   <CardBody className="flex items-center gap-4 flex-row">
                     <div className="rounded-full bg-gray-500/20 p-3">

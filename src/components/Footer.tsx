@@ -37,16 +37,16 @@ export default function Footer() {
         <div>
           <h4 className="mb-4 font-semibold">Connect</h4>
           <div className="flex space-x-4">
-            <Link href="mailto:david.web.dev73@gmail.com" className="text-gray-300 hover:text-white transition-colors">
+            <Link href="mailto:david.web.dev73@gmail.com" className="text-gray-300 hover:text-white transition-colors" target="_blank">
               <Mail className="h-5 w-5" />
             </Link>
-            <Link href="https://www.linkedin.com/in/dedaku/" className="text-gray-300 hover:text-white transition-colors">
+            <Link href="https://www.linkedin.com/in/404foundme/" className="text-gray-300 hover:text-white transition-colors" target="_blank">
               <Linkedin className="h-5 w-5" />
             </Link>
-            <Link href="https://github.com/StackOverlordX" className="text-gray-300 hover:text-white transition-colors">
+            <Link href="https://github.com/404FoundMeX" className="text-gray-300 hover:text-white transition-colors" target="_blank">
               <Github className="h-5 w-5" />
             </Link>
-            <Link href="https://discord.gg/your-invite-link" className="text-gray-300 hover:text-white transition-colors">
+            <Link href="https://discord.gg/2NssRs2b" className="text-gray-300 hover:text-white transition-colors" target="_blank">
               <MessageCircle className="h-5 w-5" />
             </Link>
           </div>

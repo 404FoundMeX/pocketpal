@@ -13,7 +13,7 @@ export default withNextra({
     // ... Add regular Next.js options here
     turbopack: {
         resolveAlias: {
-            'next-mdx-import-source-file': './src/mdx-components.js'
+            'next-mdx-import-source-file': './src/mdx-components.tsx'
         }
     }
 });

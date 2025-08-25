@@ -321,6 +321,9 @@ export default function LandingPage() {
               Get Started Now
             </Button>
             <Button 
+              as={Link}
+              href="https://github.com/404FoundMeX/pocketpal"
+              target="_blank"
               size="lg" 
               variant="bordered" 
               className="border-white text-white hover:bg-white/10"
