@@ -7,7 +7,7 @@ import {
 	multiSessionClient,
 	oneTapClient,
 	oidcClient,
-	genericOAuthClient,
+	genericOAuthClient
 } from "better-auth/client/plugins";
 import { toast } from "sonner";
 import { stripeClient } from "@better-auth/stripe/client";
