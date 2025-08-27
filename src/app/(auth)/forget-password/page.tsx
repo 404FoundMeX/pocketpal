@@ -1,6 +1,13 @@
 "use client";
 
-import { Alert, Button, Card, CardBody, CardHeader, Input } from "~/app/hero-ui";
+import {
+  Alert,
+  Button,
+  Card,
+  CardBody,
+  CardHeader,
+  Input,
+} from "~/app/hero-ui";
 import { client } from "~/lib/auth-client";
 import { AlertCircle, ArrowLeft, CheckCircle2 } from "lucide-react";
 import Link from "next/link";
@@ -41,7 +48,10 @@ export default function Component() {
             </p>
           </CardHeader>
           <CardBody>
-            <Alert description="If you don't see the email, check your spam folder." variant="faded" />
+            <Alert
+              description="If you don't see the email, check your spam folder."
+              variant="faded"
+            />
           </CardBody>
           <div className="px-6 py-4">
             <Button
@@ -86,10 +96,7 @@ export default function Component() {
               </div>
             </div>
             {error && (
-              <Alert variant="destructive" className="mt-4">
-                <AlertCircle className="h-4 w-4" />
-                <AlertDescription>{error}</AlertDescription>
-              </Alert>
+              <Alert variant="faded" description={error} className="mt-4" />
             )}
             <Button
               className="mt-4 w-full"
@@ -101,10 +108,8 @@ export default function Component() {
           </form>
         </CardBody>
         <div className="flex justify-center px-6 py-4">
-          <Link href="/sign-in">
-            <Button variant="link" className="px-0">
-              Back to sign in
-            </Button>
+          <Link href="/sign-in" color="foreground">
+            Back to sign in
           </Link>
         </div>
       </Card>
