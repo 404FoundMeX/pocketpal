@@ -1,14 +1,12 @@
 "use client";
-
 import { Button, buttonVariants } from "~/components/ui/button";
 import { Label } from "~/components/ui/label";
 import { Switch } from "~/components/ui/switch";
-
 import { cn } from "~/lib/utils";
 import { motion } from "framer-motion";
 import { Star } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
-import confetti from "canvas-confetti";
+const confetti = require("canvas-confetti") as any;
 import NumberFlow from "@number-flow/react";
 import { CheckIcon } from "@radix-ui/react-icons";
 import { client } from "~/lib/auth-client";
