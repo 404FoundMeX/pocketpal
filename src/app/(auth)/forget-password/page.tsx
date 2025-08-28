@@ -9,7 +9,7 @@ import {
   Input,
 } from "~/app/hero-ui";
 import { client } from "~/lib/auth-client";
-import { AlertCircle, ArrowLeft, CheckCircle2 } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -30,7 +30,7 @@ export default function Component() {
         redirectTo: "/reset-password",
       });
       setIsSubmitted(true);
-    } catch (err) {
+    } catch {
       setError("An error occurred. Please try again.");
     } finally {
       setIsSubmitting(false);
@@ -44,7 +44,7 @@ export default function Component() {
           <CardHeader className="flex flex-col gap-2">
             <h2 className="text-lg font-semibold">Check your email</h2>
             <p className="text-muted-foreground text-sm">
-              We've sent a password reset link to your email.
+              We&apos;ve sent a password reset link to your email.
             </p>
           </CardHeader>
           <CardBody>

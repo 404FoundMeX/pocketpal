@@ -1,1 +1,1 @@
-export { default as PocketPalIcon } from './pocketpal-logo'
+export { default as PocketPalIcon } from "./pocketpal-logo";

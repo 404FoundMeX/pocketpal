@@ -4,15 +4,13 @@ import {
   Button,
   Card,
   CardBody,
-  CardHeader,
   Input,
   Checkbox,
 } from "~/app/hero-ui";
 import { useState, useTransition } from "react";
 import { Loader2, FingerprintIcon } from "lucide-react";
-import { client, signIn } from "~/lib/auth-client";
+import { signIn } from "~/lib/auth-client";
 import Link from "next/link";
-import { cn } from "~/lib/utils";
 import { useRouter, useSearchParams } from "next/navigation";
 import { toast } from "sonner";
 import { getCallbackURL } from "~/lib/shared";
@@ -39,7 +37,7 @@ export default function SignIn() {
         toast.success("Successfully signed in with passkey");
         router.push(getCallbackURL(params));
       }
-    } catch (error) {
+    } catch {
       toast.error("Passkey authentication failed");
       setPasskeyLoading(false);
     }
@@ -55,7 +53,7 @@ export default function SignIn() {
           </div>
           <h2 className="text-2xl font-semibold">Log in to PocketPal</h2>
           <p>
-            Don't have an account?{" "}
+            Don&apos;t have an account?{" "}
             <Link href="/sign-up" className="font-medium hover:underline">
               Sign up.
             </Link>
@@ -126,7 +124,7 @@ export default function SignIn() {
                 await signIn.email(
                   { email, password, rememberMe },
                   {
-                    onSuccess(context: any) {
+                    onSuccess() {
                       toast.success("Successfully signed in");
                       router.push(getCallbackURL(params));
                     },
@@ -143,14 +141,14 @@ export default function SignIn() {
           </Button>
         </div>
 
-		{/* Divider */}
+        {/* Divider */}
         <div className="flex items-center">
           <span className="flex-grow border-t border-gray-600" />
-          <span className="px-4 text-gray-400 text-sm">or</span>
+          <span className="px-4 text-sm text-gray-400">or</span>
           <span className="flex-grow border-t border-gray-600" />
         </div>
 
-		{/* Social Sign-in Buttons */}
+        {/* Social Sign-in Buttons */}
         <div className="space-y-3">
           <div className="flex gap-2">
             <Button
@@ -211,20 +209,19 @@ export default function SignIn() {
               </svg>
               GitHub
             </Button>
-			
           </div>
-           
-           {/* Passkey Button */}
-           <Button
-             variant="bordered"
-             className="w-full gap-2"
-             disabled={passkeyLoading}
-             onClick={signInPassKey}
-           >
-             <FingerprintIcon size={16} />
-             {passkeyLoading ? "Signing in..." : "Sign in with Passkey"}
-           </Button>
-         </div>
+
+          {/* Passkey Button */}
+          <Button
+            variant="bordered"
+            className="w-full gap-2"
+            disabled={passkeyLoading}
+            onClick={signInPassKey}
+          >
+            <FingerprintIcon size={16} />
+            {passkeyLoading ? "Signing in..." : "Sign in with Passkey"}
+          </Button>
+        </div>
 
         {/* Footer */}
         <div className="text-center">

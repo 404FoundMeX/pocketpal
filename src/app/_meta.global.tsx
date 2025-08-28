@@ -1,73 +1,64 @@
-import type { MetaRecord } from 'nextra'
+import type { MetaRecord } from "nextra";
 
 const GETTING_STARTED: MetaRecord = {
-  purpose: '',
-}
+  purpose: "",
+};
 
-const ARCHITECTURE: MetaRecord = {
+const ARCHITECTURE: MetaRecord = {};
 
-}
+const FEATURES: MetaRecord = {};
 
-const FEATURES: MetaRecord = {
+const CONTRIBUTING_GUIDE: MetaRecord = {};
 
-}
+const API: MetaRecord = {};
 
-const CONTRIBUTING_GUIDE: MetaRecord = {
+const DEPLOYMENT: MetaRecord = {};
 
-}
-
-const API: MetaRecord = {
-
-}
-
-const DEPLOYMENT: MetaRecord = {
-
-}
-
-
-export default {
+const metaConfig = {
   index: {
-    type: 'page',
-    display: 'hidden'
+    type: "page",
+    display: "hidden",
   },
   docs: {
-    type: 'page',
-    title: 'Documentation',
+    type: "page",
+    title: "Documentation",
     items: {
-      "getting-started": { 
+      "getting-started": {
         items: GETTING_STARTED,
-        title: 'Getting Started',
+        title: "Getting Started",
       },
-      "architecture": { 
+      architecture: {
         items: ARCHITECTURE,
-        title: 'Architecture & Design',
+        title: "Architecture & Design",
       },
-      "features": { 
+      features: {
         items: FEATURES,
-        title: 'Features & Roadmap',
+        title: "Features & Roadmap",
       },
-      "contributing-guide": { 
+      "contributing-guide": {
         items: CONTRIBUTING_GUIDE,
-        title: 'Contributing Guide',
+        title: "Contributing Guide",
       },
-      "api": { 
+      api: {
         items: API,
-        title: 'API Documentation',
+        title: "API Documentation",
       },
-      "deployment": { 
+      deployment: {
         items: DEPLOYMENT,
-        title: 'Deployment & Hosting',
+        title: "Deployment & Hosting",
       },
-    }
+    },
   },
   about: {
-    type: 'page',
-    title: 'About',
-    href: '/about'
+    type: "page",
+    title: "About",
+    href: "/about",
   },
   contact: {
-    type: 'page',
-    title: 'Contact',
-    href: '/contact'
+    type: "page",
+    title: "Contact",
+    href: "/contact",
   },
-}
+};
+
+export default metaConfig;

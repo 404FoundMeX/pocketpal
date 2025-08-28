@@ -1,11 +1,6 @@
 "use client";
 
-import {
-  Button,
-  Card,
-  CardBody,
-  Input,
-} from "~/app/hero-ui";
+import { Button, Card, CardBody, Input } from "~/app/hero-ui";
 import { useState } from "react";
 import { Loader2 } from "lucide-react";
 import { signIn, signUp } from "~/lib/auth-client";
@@ -29,10 +24,15 @@ export function SignUp() {
           <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full border border-white bg-black">
             <span className="text-xl font-bold text-white">P</span>
           </div>
-          <h2 className="text-2xl font-semibold text-white">Create your PocketPal account</h2>
+          <h2 className="text-2xl font-semibold text-white">
+            Create your PocketPal account
+          </h2>
           <p className="text-gray-300">
             Already have an account?{" "}
-            <Link href="/sign-in" className="text-white font-medium hover:underline">
+            <Link
+              href="/sign-in"
+              className="font-medium text-white hover:underline"
+            >
               Sign in.
             </Link>
           </p>
@@ -56,7 +56,10 @@ export function SignUp() {
           </div>
 
           <div className="space-y-2">
-            <label htmlFor="password" className="text-sm font-medium text-white">
+            <label
+              htmlFor="password"
+              className="text-sm font-medium text-white"
+            >
               Password
             </label>
             <Input
@@ -76,7 +79,7 @@ export function SignUp() {
             disabled={loading}
             onClick={async () => {
               await signUp.email({
-				name: email.split('@')[0] || "User",
+                name: email.split("@")[0] ?? "User",
                 email,
                 password,
                 callbackURL: "/dashboard",
@@ -87,10 +90,10 @@ export function SignUp() {
                   onRequest: () => {
                     setLoading(true);
                   },
-                  onError: (ctx: any) => {
+                  onError: (ctx: { error: { message: string } }) => {
                     toast.error(ctx.error.message);
                   },
-                  onSuccess: async (ctx: any) => {
+                  onSuccess: async () => {
                     toast.success("Successfully signed up");
                     router.push(getCallbackURL(params));
                   },
@@ -106,14 +109,14 @@ export function SignUp() {
           </Button>
         </div>
 
-		{/* Divider */}
+        {/* Divider */}
         <div className="flex items-center">
           <span className="flex-grow border-t border-gray-600" />
-          <span className="px-4 text-gray-400 text-sm">or</span>
+          <span className="px-4 text-sm text-gray-400">or</span>
           <span className="flex-grow border-t border-gray-600" />
         </div>
 
-		{/* Social Sign-in Buttons */}
+        {/* Social Sign-in Buttons */}
         <div className="space-y-3">
           <div className="flex gap-2">
             <Button
@@ -174,9 +177,8 @@ export function SignUp() {
               </svg>
               GitHub
             </Button>
-			
           </div>
-         </div>
+        </div>
 
         {/* Footer */}
         <div className="text-center">

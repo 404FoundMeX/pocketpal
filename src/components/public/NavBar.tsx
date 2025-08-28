@@ -14,21 +14,22 @@ import { SignInButton, SignInFallback } from "~/components/sign-in-btn";
 import { Suspense } from "react";
 
 export default function NavBar() {
-
   const menuItems = [
     { label: "Features", href: "/#features" },
     { label: "About", href: "/about" },
     { label: "Contact", href: "/contact" },
     { label: "Documentation", href: "/docs" },
-    { label: "GitHub", href: "https://github.com/404FoundMeX/pocketpal", external: true }
+    {
+      label: "GitHub",
+      href: "https://github.com/404FoundMeX/pocketpal",
+      external: true,
+    },
   ];
 
   return (
     <Navbar maxWidth="xl">
       <NavbarContent>
-        <NavbarMenuToggle
-          className="sm:hidden"
-        />
+        <NavbarMenuToggle className="sm:hidden" />
         <NavbarBrand>
           <Link href="/">
             <PocketPalIcon />
@@ -74,16 +75,14 @@ export default function NavBar() {
           </Link>
         </NavbarItem>
         <NavbarItem>
-          {/* @ts-ignore */}
           <Suspense fallback={<SignInFallback />}>
-            {/* @ts-ignore */}
             <SignInButton />
           </Suspense>
         </NavbarItem>
       </NavbarContent>
       <NavbarMenu>
         {menuItems.map((item, index) => (
-          <NavbarMenuItem key={`${item}-${index}`}>
+          <NavbarMenuItem key={`${item.label}-${index}`}>
             <Link
               className="w-full"
               color={
