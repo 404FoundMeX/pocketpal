@@ -171,7 +171,7 @@ function Component(props: { currentPlan?: string; isTrial?: boolean }) {
                 onClick={async () => {
                   await client.subscription.cancel(
                     {
-                      returnUrl: "/dashboard",
+                      returnUrl: "/home",
                     },
                     {
                                           onError: (ctx: { error: { message: string } }) => {

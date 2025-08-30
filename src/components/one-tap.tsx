@@ -102,7 +102,7 @@ function SignInBox() {
             {
               email: email,
               password: password,
-              callbackURL: "/dashboard",
+              callbackURL: "/home",
               rememberMe,
             },
             {
@@ -127,7 +127,7 @@ function SignInBox() {
         onClick={async () => {
           await signIn.social({
             provider: "google",
-            callbackURL: "/dashboard",
+            callbackURL: "/home",
           });
         }}
       >
@@ -163,7 +163,7 @@ function SignInBox() {
           await signIn.passkey({
             fetchOptions: {
               onSuccess(_context: unknown) {
-                router.push("/dashboard");
+                router.push("/home");
               },
               onError(_context: { error: { message: string } }) {
                 toast.error(_context.error.message);

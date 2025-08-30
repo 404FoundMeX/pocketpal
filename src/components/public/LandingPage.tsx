@@ -13,81 +13,13 @@ import {
   Github,
 } from "lucide-react";
 import SignedIn from "~/components/signed-in";
-import SignedOut from "~/components/signed-out";
+import { HeroSection } from "~/components/hero-section";
+import { AuroraBackground } from "~/components/ui/aurora-background";
 
 export default function LandingPage() {
   return (
     <main className="from-black-900 to-black-100 min-h-screen bg-gradient-to-b text-white">
-      {/* Hero Section */}
-      <section className="container mx-auto px-4 py-20 text-center">
-        <div className="mx-auto max-w-4xl">
-          <h1 className="mb-6 text-5xl font-extrabold tracking-tight sm:text-6xl lg:text-7xl">
-            PocketPal
-            <span className="block text-[hsl(280,100%,70%)]">
-              Your Smart Financial Companion
-            </span>
-          </h1>
-          <p className="mb-8 text-xl text-gray-300 sm:text-2xl">
-            Open-source personal finance management that puts you in control.
-            Track expenses, set budgets, and achieve your financial goals with
-            ease.
-          </p>
-          <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
-            <SignedOut>
-              <Button
-                as={Link}
-                href="/auth/signup"
-                size="lg"
-                color="primary"
-                className="bg-[hsl(280,100%,70%)] text-white"
-                endContent={<ArrowRight className="h-4 w-4" />}
-              >
-                Get Started Free
-              </Button>
-            </SignedOut>
-            <SignedIn>
-              <Button
-                as={Link}
-                href="/dashboard"
-                size="lg"
-                color="primary"
-                className="bg-[hsl(280,100%,70%)] text-white"
-                endContent={<ArrowRight className="h-4 w-4" />}
-              >
-                Go to Dashboard
-              </Button>
-            </SignedIn>
-            <Button
-              as={Link}
-              href="/#demo"
-              size="lg"
-              variant="bordered"
-              className="border-white text-white hover:bg-white/10"
-            >
-              View Demo
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* Demo Section */}
-      <section id="demo" className="container mx-auto px-4 py-16">
-        <div className="mx-auto max-w-6xl">
-          <div className="rounded-2xl border border-gray-700 bg-gray-800/50 p-8 backdrop-blur-sm">
-            <div className="aspect-video rounded-xl bg-gradient-to-r from-purple-600 to-blue-600 p-8">
-              <div className="flex h-full items-center justify-center">
-                <div className="text-center text-white">
-                  <h3 className="mb-4 text-2xl font-bold">Dashboard Preview</h3>
-                  <p className="text-lg opacity-90">
-                    Interactive financial dashboard with charts, insights, and
-                    real-time data
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <HeroSection />
 
       {/* What is it Section */}
       <section className="container mx-auto px-4 py-16">
@@ -412,7 +344,7 @@ export default function LandingPage() {
             <SignedIn>
               <Button
                 as={Link}
-                href="/dashboard"
+                href="/home"
                 size="lg"
                 color="primary"
                 className="bg-[hsl(280,100%,70%)] text-white"

@@ -82,7 +82,7 @@ export function SignUp() {
                 name: email.split("@")[0] ?? "User",
                 email,
                 password,
-                callbackURL: "/dashboard",
+                callbackURL: "/home",
                 fetchOptions: {
                   onResponse: () => {
                     setLoading(false);
@@ -125,7 +125,7 @@ export function SignUp() {
               onClick={async () => {
                 await signIn.social({
                   provider: "google",
-                  callbackURL: "/dashboard",
+                  callbackURL: "/home",
                 });
               }}
             >
@@ -160,7 +160,7 @@ export function SignUp() {
               onClick={async () => {
                 await signIn.social({
                   provider: "github",
-                  callbackURL: "/dashboard",
+                  callbackURL: "/home",
                 });
               }}
             >

@@ -157,7 +157,7 @@ export default function SignIn() {
               onClick={async () => {
                 await signIn.social({
                   provider: "google",
-                  callbackURL: "/dashboard",
+                  callbackURL: "/home",
                 });
               }}
             >
@@ -192,7 +192,7 @@ export default function SignIn() {
               onClick={async () => {
                 await signIn.social({
                   provider: "github",
-                  callbackURL: "/dashboard",
+                  callbackURL: "/home",
                 });
               }}
             >
