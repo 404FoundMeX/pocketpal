@@ -2,10 +2,26 @@ import { drizzle } from "drizzle-orm/postgres-js";
 import postgres from "postgres";
 
 import { env } from "~/env";
-import * as authSchema from "./auth-schema";
+import * as userSchema from "~/features/users/server/db/schema";
+import * as categorySchema from "~/features/categories/server/db/schema";
+import * as expenseSchema from "~/features/expenses/server/db/schema";
+import * as creditSchema from "~/features/credits/server/db/schema";
+import * as financeSchema from "~/features/finances/server/db/schema";
+import * as goalSchema from "~/features/goals/server/db/schema";
+import * as receiptSchema from "~/features/receipts/server/db/schema";
+import * as userMonthlySummarySchema from "~/features/analytics/server/db/schema";
+import * as relations from "./relations";
 
 const schema = {
-  ...authSchema,
+  ...userSchema,
+  ...categorySchema,
+  ...expenseSchema,
+  ...creditSchema,
+  ...financeSchema,
+  ...goalSchema,
+  ...receiptSchema,
+  ...userMonthlySummarySchema,
+  ...relations,
 };
 
 /**
@@ -19,4 +35,4 @@ const globalForDb = globalThis as unknown as {
 const conn = globalForDb.conn ?? postgres(env.DATABASE_URL);
 if (env.NODE_ENV !== "production") globalForDb.conn = conn;
 
-export const db = drizzle(conn, { schema });
+export const db = drizzle(conn, { schema, logger: true });

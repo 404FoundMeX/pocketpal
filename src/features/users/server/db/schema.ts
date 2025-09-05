@@ -1,19 +1,23 @@
 import {
   pgTable,
   text,
+  varchar,
   timestamp,
   boolean,
   integer,
+  uuid,
 } from "drizzle-orm/pg-core";
 
 export const user = pgTable("user", {
   id: text("id").primaryKey(),
-  name: text("name").notNull(),
-  email: text("email").notNull().unique(),
+  uuid: uuid("uuid").defaultRandom().notNull().unique(),
+  name: varchar("name", { length: 100 }).notNull(),
+  email: varchar("email", { length: 255 }).notNull().unique(),
   emailVerified: boolean("email_verified")
     .$defaultFn(() => false)
     .notNull(),
-  image: text("image"),
+  profilePicture: varchar("profile_picture", { length: 500 }),
+  currency: varchar("currency", { length: 3 }).default("USD").notNull(),
   createdAt: timestamp("created_at")
     .$defaultFn(() => /* @__PURE__ */ new Date())
     .notNull(),

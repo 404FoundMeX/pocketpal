@@ -7,7 +7,7 @@ const compat = new FlatCompat({
   baseDirectory: import.meta.dirname,
 });
 
-export default tseslint.config(
+export default tseslint.config( 
   {
     ignores: [".next", "src/components/ui/**/*", "src/app/(app)/home/page.tsx"],
   },
@@ -22,7 +22,7 @@ export default tseslint.config(
       ...tseslint.configs.recommendedTypeChecked,
       ...tseslint.configs.stylisticTypeChecked,
     ],
-    rules: {
+    rules: { 
       "@typescript-eslint/array-type": "off",
       "@typescript-eslint/consistent-type-definitions": "off",
       "@typescript-eslint/consistent-type-imports": [
