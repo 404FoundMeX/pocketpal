@@ -21,7 +21,7 @@ export const creditTypeEnum = pgEnum("credit_type", [
 export const credits = pgTable("credits", {
   id: serial("id").primaryKey(),
   uuid: uuid("uuid").defaultRandom().notNull().unique(),
-  userId: integer("user_id")
+  userId: text("user_id")
     .references(() => user.id)
     .notNull(),
   name: varchar("name", { length: 100 }).notNull(),

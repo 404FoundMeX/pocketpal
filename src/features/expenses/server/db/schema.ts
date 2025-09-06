@@ -20,7 +20,7 @@ export const expenseTypeEnum = pgEnum("expense_type", ["income", "expense"]);
 export const expenses = pgTable("expenses", {
   id: serial("id").primaryKey(),
   uuid: uuid("uuid").defaultRandom().notNull().unique(),
-  userId: integer("user_id")
+  userId: text("user_id")
     .references(() => user.id)
     .notNull(),
   categoryId: integer("category_id")

@@ -1,7 +1,7 @@
 import {
   pgTable,
   timestamp,
-  integer,
+  text,
   uuid,
   serial,
   decimal,
@@ -11,7 +11,7 @@ import { user } from "~/features/users/server/db/schema";
 export const finances = pgTable("finances", {
   id: serial("id").primaryKey(),
   uuid: uuid("uuid").defaultRandom().notNull().unique(),
-  userId: integer("user_id")
+  userId: text("user_id")
     .references(() => user.id)
     .notNull(),
   balance: decimal("balance", { precision: 12, scale: 2 })

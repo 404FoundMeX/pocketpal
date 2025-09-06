@@ -15,7 +15,7 @@ import { user } from "~/features/users/server/db/schema";
 export const categories = pgTable('categories', {
   id: serial('id').primaryKey(),
   uuid: uuid('uuid').defaultRandom().notNull().unique(),
-  userId: integer('user_id').references(() => user.id).notNull(),
+  userId: text('user_id').references(() => user.id).notNull(),
   name: varchar('name', { length: 100 }).notNull(),
   description: text('description'),
   color: varchar('color', { length: 7 }).default('#000000'),

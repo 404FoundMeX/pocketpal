@@ -14,7 +14,7 @@ import { reactInvitationEmail } from "./email/invitation";
 import { reactResetPasswordEmail } from "./email/reset-password";
 import { resend } from "./email/resend";
 import { drizzleAdapter } from "better-auth/adapters/drizzle";
-import { db } from "~/server/db";
+import { db } from "~/server/db/schema";
 import { nextCookies } from "better-auth/next-js";
 import { passkey } from "better-auth/plugins/passkey";
 import { stripe } from "@better-auth/stripe";

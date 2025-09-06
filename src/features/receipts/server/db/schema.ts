@@ -20,7 +20,7 @@ export const receiptStatusEnum = pgEnum("receipt_status", [
 export const receipts = pgTable("receipts", {
   id: serial("id").primaryKey(),
   uuid: uuid("uuid").defaultRandom().notNull().unique(),
-  userId: integer("user_id")
+  userId: text("user_id")
     .references(() => user.id)
     .notNull(),
   fileName: varchar("file_name", { length: 255 }).notNull(),

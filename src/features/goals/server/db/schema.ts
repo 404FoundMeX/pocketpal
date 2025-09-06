@@ -24,7 +24,7 @@ export const goalStatusEnum = pgEnum("goal_status", [
 export const goals = pgTable("goals", {
   id: serial("id").primaryKey(),
   uuid: uuid("uuid").defaultRandom().notNull().unique(),
-  userId: integer("user_id")
+  userId: text("user_id")
     .references(() => user.id)
     .notNull(),
   title: varchar("title", { length: 200 }).notNull(),
