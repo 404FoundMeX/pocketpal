@@ -12,7 +12,7 @@ import {
   CardTitle,
 } from "~/components/ui/card"
 import {
-  ChartConfig,
+  type ChartConfig,
   ChartContainer,
   ChartTooltip,
   ChartTooltipContent,
@@ -249,7 +249,7 @@ export function ChartAreaInteractive() {
               tickMargin={8}
               minTickGap={32}
               tickFormatter={(value) => {
-                const date = new Date(value)
+                const date = new Date(value as string | number | Date)
                 return date.toLocaleDateString("en-US", {
                   month: "short",
                   day: "numeric",
@@ -261,7 +261,7 @@ export function ChartAreaInteractive() {
               content={
                 <ChartTooltipContent
                   labelFormatter={(value) => {
-                    return new Date(value).toLocaleDateString("en-US", {
+                    return new Date(value as string | number | Date).toLocaleDateString("en-US", {
                       month: "short",
                       day: "numeric",
                     })
