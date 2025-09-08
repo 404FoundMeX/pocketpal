@@ -39,7 +39,9 @@ const baseURL: string | undefined =
       : process.env.VERCEL_ENV === "preview"
         ? `https://${process.env.VERCEL_URL}`
         : undefined
-    : undefined;
+    : process.env.NODE_ENV === "development"
+      ? "http://localhost:3000"
+      : undefined;
 
 const cookieDomain: string | undefined =
   process.env.VERCEL === "1"
@@ -53,6 +55,11 @@ const cookieDomain: string | undefined =
 export const auth = betterAuth({
   appName: "Better Auth Demo",
   baseURL,
+  cookies: {
+    domain: cookieDomain,
+    sameSite: "lax",
+    secure: process.env.NODE_ENV === "production",
+  },
   database: drizzleAdapter(db, {
     provider: "pg",
   }),
@@ -93,7 +100,7 @@ export const auth = betterAuth({
     },
     google: {
       clientId: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID ?? "",
-      clientSecret: process.env.GITHUB_CLIENT_SECRET ?? "",
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET ?? "",
     },
   },
   plugins: [
