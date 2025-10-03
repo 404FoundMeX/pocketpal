@@ -1,19 +1,15 @@
 "use client";
 
-import {
-  Alert,
-  Button,
-  Card,
-  CardBody,
-  CardHeader,
-  Input,
-} from "~/app/hero-ui";
+import { Card, CardHeader, CardContent } from "~/components/ui/card";
+import { Input } from "~/components/ui/input";
+import { Alert, AlertDescription } from "~/components/ui/alert";
+import { Button } from "~/components/ui/button";
 import { client } from "~/lib/auth-client";
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 
-export default function Component() {
+export default function ForgetPassword() {
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -47,15 +43,16 @@ export default function Component() {
               We&apos;ve sent a password reset link to your email.
             </p>
           </CardHeader>
-          <CardBody>
-            <Alert
-              description="If you don't see the email, check your spam folder."
-              variant="faded"
-            />
-          </CardBody>
+          <CardContent>
+            <Alert variant="default" className="mt-4">
+              <AlertDescription>
+                If you don't see the email, check your spam folder.
+              </AlertDescription>
+            </Alert>
+          </CardContent>
           <div className="px-6 py-4">
             <Button
-              variant="bordered"
+              variant="outline"
               className="w-full"
               onClick={() => setIsSubmitted(false)}
             >
@@ -68,9 +65,8 @@ export default function Component() {
   }
 
   return (
-    <main className="flex h-screen min-h-[calc(100vh-10rem)] flex-col items-center justify-center">
+    <main className="flex flex-col items-center justify-center">
       {/* Radial gradient for the container to give a faded look */}
-      <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] dark:bg-black"></div>
       <Card className="w-[350px]">
         <CardHeader className="flex flex-col gap-2">
           <h2 className="text-lg font-semibold">Forgot password</h2>
@@ -78,7 +74,7 @@ export default function Component() {
             Enter your email to reset your password
           </p>
         </CardHeader>
-        <CardBody>
+        <CardContent>
           <form onSubmit={handleSubmit}>
             <div className="grid w-full items-center gap-4">
               <div className="flex flex-col space-y-1.5">
@@ -96,7 +92,9 @@ export default function Component() {
               </div>
             </div>
             {error && (
-              <Alert variant="faded" description={error} className="mt-4" />
+              <Alert variant="default" className="mt-4">
+                <AlertDescription>{error}</AlertDescription>
+              </Alert>
             )}
             <Button
               className="mt-4 w-full"
@@ -106,11 +104,9 @@ export default function Component() {
               {isSubmitting ? "Sending..." : "Send reset link"}
             </Button>
           </form>
-        </CardBody>
+        </CardContent>
         <div className="flex justify-center px-6 py-4">
-          <Link href="/sign-in" color="foreground">
-            Back to sign in
-          </Link>
+          <Link href="/sign-in">Back to sign in</Link>
         </div>
       </Card>
     </main>
